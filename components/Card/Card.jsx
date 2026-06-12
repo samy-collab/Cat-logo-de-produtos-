@@ -1,9 +1,14 @@
+import Img from "../Img/Img";
+import styles from "./Card.module.css";
+
 export default function Card({ produto }) {
   return (
-    <article>
-      <img src={produto.image} alt={produto.title} width="160" height="160" />
+    <div className={styles.card}>
+      <Img src={produto.image} alt={produto.title} />
+
       <h2>{produto.title}</h2>
-      <p>R$ {produto.price.toFixed(2).replace(".", ",")}</p>
-    </article>
+
+      <p>R$ {produto.price}</p>
+    </div>
   );
 }
