@@ -18,7 +18,13 @@ export default function Home() {
         <p>Carregando...</p>
       ) : (
         produtos.map((produto) => (
-          <Card key={produto.id} produto={produto} />
+          <Card
+            key={produto.id}
+            id={produto.id}
+            title={produto.title}
+            price={produto.price}
+            image={produto.image}
+          />
         ))
       )}
     </main>

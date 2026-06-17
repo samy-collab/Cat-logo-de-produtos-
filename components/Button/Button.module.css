@@ -1,6 +1,9 @@
 .button {
   padding: 10px 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000000;
   cursor: pointer;
+  font-weight: bold;
 }
