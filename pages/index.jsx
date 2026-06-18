@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header/Header";
 import Card from "../components/Card/Card";
 import Footer from "../components/Footer/Footer";
 
@@ -14,8 +13,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-
       <main>
         <h1>Produtos</h1>
 

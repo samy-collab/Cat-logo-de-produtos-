@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Img from "../../components/Img/Img";
 
 export default function DetalhesProduto() {
   const router = useRouter();
@@ -23,7 +24,11 @@ export default function DetalhesProduto() {
     <main>
       <h1>{produto.title}</h1>
 
-      <img src={produto.image} alt={produto.title} width="200" />
+      <Img
+        src={produto.image}
+        alt={produto.title}
+        width="200"
+      />
 
       <p>R$ {produto.price}</p>
 

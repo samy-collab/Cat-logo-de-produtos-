@@ -1,5 +1,11 @@
-import styles from "./Img.module.css";
-
-export default function Img({ src, alt }) {
-  return <img className={styles.img} src={src} alt={alt} />;
+export default function Img({ src, alt, className, width, height }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      width={width}
+      height={height}
+    />
+  );
 }
