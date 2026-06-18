@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export default function DetalhesProduto() {
   const router = useRouter();
@@ -21,20 +20,16 @@ export default function DetalhesProduto() {
   }
 
   return (
-    <>
-      <main>
-        <Link href="/">Voltar</Link>
+    <main>
+      <h1>{produto.title}</h1>
 
-        <h1>{produto.title}</h1>
+      <img src={produto.image} alt={produto.title} width="200" />
 
-        <img src={produto.image} alt={produto.title} width="200" />
+      <p>R$ {produto.price}</p>
 
-        <p>R$ {produto.price}</p>
+      <p>{produto.description}</p>
 
-        <p>{produto.description}</p>
-
-        <p>Categoria: {produto.category}</p>
-      </main>
-    </>
+      <p>Categoria: {produto.category}</p>
+    </main>
   );
 }

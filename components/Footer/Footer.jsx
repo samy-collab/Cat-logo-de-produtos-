@@ -3,7 +3,8 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p>Projeto de React e Next.js</p>
+      <p>© 2026 Catálogo de Produtos</p>
+      <p>Projeto desenvolvido em Next.js</p>
     </footer>
   );
 }
