@@ -1,14 +1,20 @@
 import { useState } from "react";
 import Link from "next/link";
+import Modal from "../components/Modal/Modal";
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
 
+    setMostrarModal(true);
+  }
+
+  function confirmarCadastro() {
     const novoProduto = {
       nome,
       preco,
@@ -20,6 +26,14 @@ export default function Cadastro() {
     setNome("");
     setPreco("");
     setDescricao("");
+    setMostrarModal(false);
+  }
+
+  function cancelarCadastro() {
+    setNome("");
+    setPreco("");
+    setDescricao("");
+    setMostrarModal(false);
   }
 
   return (
@@ -56,7 +70,17 @@ export default function Cadastro() {
         </div>
 
         <button type="submit">Cadastrar</button>
+        <button type="button" onClick={cancelarCadastro}>
+          Cancelar
+        </button>
       </form>
+
+      {mostrarModal && (
+        <Modal
+          onConfirmar={confirmarCadastro}
+          onCancelar={cancelarCadastro}
+        />
+      )}
     </main>
   );
 }
