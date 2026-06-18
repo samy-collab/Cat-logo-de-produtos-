@@ -4,11 +4,9 @@ import styles from "./Header.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <h1>Loja</h1>
-
-      <nav>
+      <nav className={styles.nav}>
         <Link href="/">Home</Link>
-        <Link href="/cadastro">Cadastro</Link>
+        <Link href="/cadastro">Cadastrar Produto</Link>
       </nav>
     </header>
   );
