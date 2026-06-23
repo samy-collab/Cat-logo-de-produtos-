@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Modal from "../components/Modal/Modal";
+import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -10,15 +12,14 @@ export default function Cadastro() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     setMostrarModal(true);
   }
 
   function confirmarCadastro() {
     const novoProduto = {
-      nome,
-      preco,
-      descricao,
+      nome: nome,
+      preco: preco,
+      descricao: descricao,
     };
 
     console.log(novoProduto);
@@ -30,9 +31,6 @@ export default function Cadastro() {
   }
 
   function cancelarCadastro() {
-    setNome("");
-    setPreco("");
-    setDescricao("");
     setMostrarModal(false);
   }
 
@@ -43,36 +41,33 @@ export default function Cadastro() {
       <h1>Cadastro de Produto</h1>
 
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nome</label>
-          <input
-            type="text"
-            value={nome}
-            onChange={(event) => setNome(event.target.value)}
-          />
-        </div>
+        <Input
+          label="Nome"
+          type="text"
+          value={nome}
+          onChange={(event) => setNome(event.target.value)}
+          placeholder="Digite o nome do produto"
+        />
 
-        <div>
-          <label>Preço</label>
-          <input
-            type="number"
-            value={preco}
-            onChange={(event) => setPreco(event.target.value)}
-          />
-        </div>
+        <Input
+          label="Preço"
+          type="number"
+          value={preco}
+          onChange={(event) => setPreco(event.target.value)}
+          placeholder="Digite o preço do produto"
+        />
 
         <div>
           <label>Descrição</label>
+
           <textarea
             value={descricao}
             onChange={(event) => setDescricao(event.target.value)}
+            placeholder="Digite a descrição do produto"
           />
         </div>
 
-        <button type="submit">Cadastrar</button>
-        <button type="button" onClick={cancelarCadastro}>
-          Cancelar
-        </button>
+        <Button type="submit">Cadastrar</Button>
       </form>
 
       {mostrarModal && (
